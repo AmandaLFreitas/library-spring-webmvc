@@ -13,9 +13,15 @@ public class UsuarioService {
     @Autowired
     private UsuarioRepository usuarioRepository;
 
-
-    public List<Usuario> listarTodos(){
-       return usuarioRepository.findAll();
+    public List<Usuario> listarTodos() {
+        return usuarioRepository.findAll();
     }
 
+    public Usuario buscarPorId(Long id) {
+        return usuarioRepository.findById(id).orElse(null);
+    }
+
+    // Adicionar outros métodos conforme necessário (salvar, deletar, etc.)
+    // para um gerenciamento completo de usuários, como sugerido no README.md.
+    // Por ora, listarTodos e buscarPorId são suficientes para a funcionalidade de empréstimo.
 }
